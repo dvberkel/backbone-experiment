@@ -1,5 +1,11 @@
 (function($){
     $(function(){
+	var CounterModel = Backbone.Model.extend({
+	    initialize: function(){
+		this.set({value: 0});
+	    }
+	});
+
 	var CounterView = Backbone.View.extend({
 	    el: $("#counter"),
 	    
@@ -10,11 +16,11 @@
 	    },
 	    
 	    render: function(){
-		$(this.el).text("0");
-		console.log(this.el);
+		$(this.el).text(this.model.get("value"));
 	    }
 	});
 	
-	var counterView = new CounterView();
+	var counterModel = new CounterModel();
+	var counterView = new CounterView({model: counterModel});
     });
 })(jQuery);
