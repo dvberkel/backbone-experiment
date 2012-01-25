@@ -2,7 +2,9 @@
     $(function(){
 	var CounterModel = Backbone.Model.extend({
 	    initialize: function(){
-		this.set({value: 0});
+		if (!this.has("value")) {
+		    this.set({value: 0});
+		}
 	    }
 	});
 
@@ -20,7 +22,7 @@
 	    }
 	});
 	
-	var counterModel = new CounterModel();
+	var counterModel = new CounterModel({value: 37});
 	var counterView = new CounterView({model: counterModel});
     });
 })(jQuery);
