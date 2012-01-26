@@ -4,6 +4,11 @@
 	    defaults: {
 		value: 0
 	    },
+	    
+	    increase : function(amount) {
+		amount = amount || 1;
+		this.set({value: this.get("value") + amount});
+	    }
 	});
 
 	var CounterView = Backbone.View.extend({
@@ -26,6 +31,6 @@
 	var counterModel = new CounterModel();
 	var counterView = new CounterView({model: counterModel});
 	
-	counterModel.set({value: 10});
+	counterModel.increase(10);
     });
 })(jQuery);
