@@ -22,7 +22,7 @@
 	initialize: function(){
 	    _.bindAll(this, 'render');
 	    
-	    this.model.bind("change:value", function(){
+	    this.model.bind(this.options.event, function(){
 		this.render();
 	    }, this);
 	    this.render();
@@ -37,7 +37,7 @@
 
 $(function(){
     var counterModel = new CounterModel();
-    var counterView = new CounterView({el: $("#counter"), model: counterModel});
+    var counterView = new CounterView({el: $("#counter"), model: counterModel, event: "change:value"});
     
     $("#increase").click(function(){
 	counterModel.increase();
