@@ -7,66 +7,9 @@
     <script type="text/javascript" src="lib/underscore-1.3.1.min.js"></script>
     <script type="text/javascript" src="lib/backbone-0.5.3.min.js"></script>
     <script type="text/javascript" src="js/counter.js"></script>
-    <script type="text/javascript">
-      $(function(){
-        var counterModel = new CounterModel();
-        var counterView = new CounterView({el: $("#counter-1"), model: counterModel});
-      
-        $("#increase-1").click(function(){
-          counterModel.increase();
-        });
-        $("#decrease-1").click(function(){
-          counterModel.decrease();
-        });
-      });
-    </script>
-    <script type="text/javascript">
-      $(function(){
-        var counterModel = new CounterModel();
-        new CounterView({el: $("#counter-2a"), model: counterModel});
-        new CounterView({el: $("#counter-2b"), model: counterModel});
-        new CounterView({el: $("#counter-2c"), model: counterModel});
-      
-        $("#increase-2").click(function(){
-          counterModel.increase();
-        });
-        $("#decrease-2").click(function(){
-          counterModel.decrease();
-        });
-      });
-    </script>
-    <script type="text/javascript">
-      $(function(){
-        var totalModel = new CounterModel();
-        var increaseModel = new CounterModel();
-        var decreaseModel = new CounterModel();
-
-        new CounterView({el: $("#counter-3a"), model: totalModel});
-        new CounterView({el: $("#counter-3b"), model: increaseModel});
-        new CounterView({el: $("#counter-3c"), model: decreaseModel});
-      
-        var controller = {
-          increase : function(){
-            this.trigger("increase");
-          },
-          decrease : function(){
-            this.trigger("decrease");
-          }
-        };
-        _.extend(controller, Backbone.Events);
-        controller.bind("increase",function(){this.increase();}, totalModel);
-        controller.bind("increase",function(){this.increase();}, increaseModel);
-        controller.bind("decrease",function(){this.decrease();}, totalModel);
-        controller.bind("decrease",function(){this.increase();}, decreaseModel);
-      
-        $("#increase-3").click(function(){
-          controller.increase();
-        });
-        $("#decrease-3").click(function(){
-          controller.decrease();
-        });
-      });
-    </script>
+    <script type="text/javascript" src="js/experiment-00.js"></script>
+    <script type="text/javascript" src="js/experiment-01.js"></script>
+    <script type="text/javascript" src="js/experiment-02.js"></script>
   </head>
   <body>
     <div class="topbar">
