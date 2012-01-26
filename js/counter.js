@@ -1,6 +1,6 @@
 (function($){
     $(function(){
-	var CounterModel = Backbone.Model.extend({
+	window.CounterModel = Backbone.Model.extend({
 	    defaults: {
 		value: 0
 	    },
@@ -19,7 +19,7 @@
 	    }
 	});
 
-	var CounterView = Backbone.View.extend({
+	window.CounterView = Backbone.View.extend({
 	    el: $("#counter"),
 	    
 	    initialize: function(){
