@@ -12,6 +12,9 @@
 	    initialize: function(){
 		_.bindAll(this, 'render');
 		
+		this.model.bind("change:value", function(){
+		    this.render();
+		}, this);
 		this.render();
 	    },
 	    
@@ -22,5 +25,7 @@
 	
 	var counterModel = new CounterModel();
 	var counterView = new CounterView({model: counterModel});
+	
+	counterModel.set({value: 10});
     });
 })(jQuery);
