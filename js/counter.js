@@ -33,16 +33,16 @@
 	}
     });
 
-    $(function(){
-	
-	var counterModel = new CounterModel();
-	var counterView = new CounterView({el: $("#counter"), model: counterModel});
-	
-	$("#increase").click(function(){
-	    counterModel.increase();
-	});
-	$("#decrease").click(function(){
-	    counterModel.decrease();
-	});
-    });
 })(jQuery);
+
+$(function(){
+    var counterModel = new CounterModel();
+    var counterView = new CounterView({el: $("#counter"), model: counterModel});
+    
+    $("#increase").click(function(){
+	counterModel.increase();
+    });
+    $("#decrease").click(function(){
+	counterModel.decrease();
+    });
+});
