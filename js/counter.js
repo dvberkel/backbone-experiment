@@ -39,6 +39,11 @@
 	var counterModel = new CounterModel();
 	var counterView = new CounterView({model: counterModel});
 	
-	counterModel.increase();
+	$("#increase").click(function(){
+	    counterModel.increase();
+	});
+	$("#decrease").click(function(){
+	    counterModel.decrease();
+	});
     });
 })(jQuery);
