@@ -10,12 +10,12 @@
     <script type="text/javascript">
       $(function(){
         var counterModel = new CounterModel();
-        var counterView = new CounterView({el: $("#counter"), model: counterModel});
+        var counterView = new CounterView({el: $("#counter-1"), model: counterModel});
       
-        $("#increase").click(function(){
+        $("#increase-1").click(function(){
           counterModel.increase();
         });
-        $("#decrease").click(function(){
+        $("#decrease-1").click(function(){
           counterModel.decrease();
         });
       });
@@ -38,7 +38,7 @@
       </div>
       <div class="row">
 	<div class="span8">
-	  <a id="increase" class="btn">++</a><h2 id="counter">_</h2><a id="decrease" class="btn">--</a>
+	  <a id="increase-1" class="btn">++</a><h2 id="counter-1">_</h2><a id="decrease-1" class="btn">--</a>
 	</div>
 	<div class="span8">
 	  <h1>Counter Example</h1>
