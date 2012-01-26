@@ -35,6 +35,38 @@
         });
       });
     </script>
+    <script type="text/javascript">
+      $(function(){
+        var totalModel = new CounterModel();
+        var increaseModel = new CounterModel();
+        var decreaseModel = new CounterModel();
+
+        new CounterView({el: $("#counter-3a"), model: totalModel});
+        new CounterView({el: $("#counter-3b"), model: increaseModel});
+        new CounterView({el: $("#counter-3c"), model: decreaseModel});
+      
+        var controller = {
+          increase : function(){
+            this.trigger("increase");
+          },
+          decrease : function(){
+            this.trigger("decrease");
+          }
+        };
+        _.extend(controller, Backbone.Events);
+        controller.bind("increase",function(){this.increase();}, totalModel);
+        controller.bind("increase",function(){this.increase();}, increaseModel);
+        controller.bind("decrease",function(){this.decrease();}, totalModel);
+        controller.bind("decrease",function(){this.increase();}, decreaseModel);
+      
+        $("#increase-3").click(function(){
+          controller.increase();
+        });
+        $("#decrease-3").click(function(){
+          controller.decrease();
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="topbar">
@@ -80,6 +112,26 @@
 	    one <code>CounterModel</code>, just as in the preceding
 	    example. There are three <code>CounterView</code>s, each
 	    updated when the model changes value.
+	  </p>
+	</div>
+      </div>
+      <div class="row">
+	<div class="span8">
+	  <a id="increase-3" class="btn">++</a>
+	  <h2 id="counter-3a">_</h2>
+	  <h2 id="counter-3b">_</h2>
+	  <h2 id="counter-3c">_</h2>
+	  <a id="decrease-3" class="btn">--</a>
+	</div>
+	<div class="span8">
+	  <h1>Multiple Counters &amp; Views</h1>
+	  <p>
+	    In this example there are three <code>CounterModel</code>s
+	    and
+	    three <code>CounterView</code>s. All <code>CounterModel</code>s
+	    listen for events from a controller object which triggers
+	    events when the buttons are pressed. Can you figure out
+	    what they count?
 	  </p>
 	</div>
       </div>
