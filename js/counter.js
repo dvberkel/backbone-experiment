@@ -5,9 +5,17 @@
 		value: 0
 	    },
 	    
-	    increase : function(amount) {
+	    increase : function() {
+		this._changeBy(1);
+	    },
+	    
+	    _changeBy : function(amount) {
 		amount = amount || 1;
 		this.set({value: this.get("value") + amount});
+	    },
+	    
+	    decrease : function() {
+		this._changeBy(-1);
 	    }
 	});
 
@@ -31,6 +39,6 @@
 	var counterModel = new CounterModel();
 	var counterView = new CounterView({model: counterModel});
 	
-	counterModel.increase(10);
+	counterModel.increase();
     });
 })(jQuery);
