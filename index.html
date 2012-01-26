@@ -7,6 +7,19 @@
     <script type="text/javascript" src="lib/underscore-1.3.1.min.js"></script>
     <script type="text/javascript" src="lib/backbone-0.5.3.min.js"></script>
     <script type="text/javascript" src="js/counter.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        var counterModel = new CounterModel();
+        var counterView = new CounterView({el: $("#counter"), model: counterModel});
+      
+        $("#increase").click(function(){
+          counterModel.increase();
+        });
+        $("#decrease").click(function(){
+          counterModel.decrease();
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="topbar">
