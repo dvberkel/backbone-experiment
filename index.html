@@ -53,8 +53,8 @@
 	  </p>
 	  <p>
 	    Backbone provides models and views which can be extended
-	    and wired together. This provides a easy means of
-	    structuring a javascript applications.
+	    and wired together. This provides an means to structure
+	    javascript applications.
 	  </p>
 	</div>
 	<div class="span8" id="why-experiment">
@@ -69,8 +69,8 @@
 	  </blockquote>
 	  <p>
 	    We are trying to verifying the hypothesis that the
-	    backbone.js is a great means of structuring javascript
-	    applications.
+	    backbone.js framework is a great tool to structure
+	    javascript applications.
 	  </p>
 	</div>
       </div>
@@ -82,7 +82,7 @@
 	  <h1>Counter</h1>
 	  <p>
 	    The example demonstrates a simple counter. Use the
-	    controls to change the counter. Under the water
+	    controls to change the value. Under the covers
 	    a <code>CounterModel</code> and a <code>CounterView</code> is
 	    created and wired up.
 	  </p>
@@ -104,6 +104,10 @@
 	    example. There are three <code>CounterView</code>s, each
 	    updated when the model changes value.
 	  </p>
+	  <p>
+	    You can use the controls to change the value of the
+	    counter. Notice that the views update in tandem.
+	  </p>
 	</div>
       </div>
       <div class="row" id="controller">
@@ -117,12 +121,12 @@
 	<div class="span6">
 	  <h1>Controller</h1>
 	  <p>
-	    In this example there are three <code>CounterModel</code>s
-	    and
-	    three <code>CounterView</code>s. All <code>CounterModel</code>s
-	    listen for events from a controller object which triggers
-	    events when the buttons are pressed. Can you figure out
-	    what they count?
+	    A controller can be made responsible for effectuating
+	    change in models. In this experiment
+	    three <code>CounterModel</code>s are wired to their
+	    respective <code>CounterView</code>s. All <code>CounterModel</code>s
+	    listen for increase and decrease events coming from the
+	    controller.
 	  </p>
 	</div>
       </div>
@@ -136,8 +140,9 @@
 	  <h1>Persistence</h1>
 	  <p>
 	    A persistant <code>CounterModel</code> is presented
-	    here. The persisting to localstorage. Try reloading this
-	    page to see the effect of the persistance.
+	    here. The model is persisted to localstorage. Change the
+	    value of the counter and try reloading this page to see
+	    the effect of the persistance. 
 	  </p>
 	</div>
       </div>
