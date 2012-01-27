@@ -1,5 +1,7 @@
 (function($){
     window.CounterModel = Backbone.Model.extend({
+	localStorage : new Store("counters"),
+
 	defaults: {
 	    value: 0
 	},

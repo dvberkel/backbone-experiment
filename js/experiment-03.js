@@ -1,5 +1,8 @@
 $(function(){
-    var counterModel = new CounterModel();
+    var counterModel = new CounterModel({id : "persistent"});
+    if (counterModel.fetch() == undefined){
+	counterModel.save();
+    }
 
     new CounterView({el: $("#counter-4"), model: counterModel});
     
