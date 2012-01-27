@@ -15,8 +15,14 @@ $(function(){
         }
     };
     _.extend(controller, Backbone.Events);
-    controller.bind("increase",function(){this.increase();}, counterModel);
-    controller.bind("decrease",function(){this.decrease();}, counterModel);
+    controller.bind("increase",function(){
+	this.increase();
+	this.save();
+    }, counterModel);
+    controller.bind("decrease",function(){
+	this.decrease();
+	this.save();
+    }, counterModel);
     
     $("#increase-4").click(function(){
         controller.increase();
@@ -25,5 +31,4 @@ $(function(){
         controller.decrease();
     });
     
-    console.log(localStorage);
 });
